@@ -1,5 +1,5 @@
-const IMAGE_EXTENSIONS = ["jpeg", "jpg", "png"];
+import * as config from "../../config.json";
 
 export function isImage(path: string) : boolean {
-    return IMAGE_EXTENSIONS.some(extension => path.endsWith(`.${extension}`));
+    return config.extensionsForImages.some(extension => path.endsWith(`.${extension}`));
 }

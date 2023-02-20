@@ -1,16 +1,8 @@
 {
-    "pre-processing": {
-        "filtering": {
-            "extensions": ["jpeg", "jpg", "webp"]   
-        },
-        "scanning": {
-            "pathPattern": "images/*"
-        }
-    },
-    "recognition": {
+    "extensionsForImages": ["jpeg", "jpg", "png", "gif"],
+    "keywords": {
         "screenshots": ["web site","website","internet site","screen"]
     },
-    "post-processing": {
-        "screenshots": "dist/screenshots"
-    }
+    "directoryToScan": "images/*",
+    "outputDirectory": "dist"
 }

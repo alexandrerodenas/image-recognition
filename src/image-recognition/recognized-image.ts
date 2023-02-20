@@ -1,5 +1,5 @@
 import { DetectedObject, SceneClassifier } from "./recognizable-objects";
-import { SCREENSHOT_RECOGNITION_KEYWORKDS } from "./screenshots-recognition-keywords";
+import * as config from "../config.json";
 
 export class RecognizedImage {
     constructor(
@@ -24,6 +24,6 @@ export class RecognizedImage {
             .map(sceneClassifier => sceneClassifier.classNames)
             .reduce((arr, acc) => arr.concat(acc));
         
-        return allClassNames.some(className => SCREENSHOT_RECOGNITION_KEYWORKDS.includes(className));
+        return allClassNames.some(className => config.keywords.screenshots.includes(className));
     }
 }

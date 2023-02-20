@@ -1,11 +1,11 @@
-import { readInputArgument } from "./argument-reader";
-import { listFilesIn } from "./files-scanning/files-scanner";
-import { isImage } from "./file-filtering/is-image";
+import { listFilesIn } from "./pre-processing/scanning/files-scanner";
+import { isImage } from "./pre-processing/filtering/is-image";
 import { RecognitionRunner } from "./image-recognition/runner/runner";
 import { RecognizedImage } from "./image-recognition/recognized-image";
+import * as config from "./config.json";  
 
-const filesToScan = readInputArgument();
-const files = listFilesIn(filesToScan);
+const directoryToScan = config.directoryToScan;
+const files = listFilesIn(directoryToScan);
 
 (async () => {
     try {
