@@ -1,6 +1,5 @@
-import { DetectedObject, SceneClassifier } from "./recognizable-objects";
+import { RecognizedImage } from "./analyzed-image";
 
 export interface ImageRecognizer {
-    detectObjects(image: string):  Promise<DetectedObject[]>; 
-    classifyScene(image: string): Promise<SceneClassifier[]>;
+    recognize(image: string): Promise<RecognizedImage>;
 }
