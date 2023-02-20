@@ -4,7 +4,7 @@ import * as cocoSsd from '@tensorflow-models/coco-ssd/dist';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 import { toTensorImage } from "./tf-image-converter";
 import { Tensor3D } from "@tensorflow/tfjs-core";
-import { RecognizedImage } from "../analyzed-image";
+import { RecognizedImage } from "../recognized-image";
 
 export class TensorFlowImageRecognizer implements ImageRecognizer {
 
@@ -28,7 +28,7 @@ export class TensorFlowImageRecognizer implements ImageRecognizer {
                     ));
                 const sceneClassifiers = detections[1]
                     .map(sceneClassifier => new SceneClassifier(
-                        sceneClassifier.className,
+                        sceneClassifier.className.split(', '),
                         sceneClassifier.probability
                     ));
                 return new RecognizedImage(

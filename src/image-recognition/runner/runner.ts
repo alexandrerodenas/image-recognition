@@ -1,4 +1,4 @@
-import { RecognizedImage } from "../analyzed-image";
+import { RecognizedImage } from "../recognized-image";
 import { ImageRecognizer } from "../image-recognizer";
 import { TensorFlowImageRecognizer } from "../tensorflow/tf-image-recognizer";
 

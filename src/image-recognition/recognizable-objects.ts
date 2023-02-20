@@ -11,11 +11,11 @@ export class DetectedObject {
 
 export class SceneClassifier {
     constructor(
-        public readonly className: string,
+        public readonly classNames: string[],
         public readonly probability: number
     ){}
 
     public toString(): string {
-        return `${this.className} (${this.probability.toFixed(2)})`
+        return `${this.classNames.join(', ')} (${this.probability.toFixed(2)})`
     }
 }
