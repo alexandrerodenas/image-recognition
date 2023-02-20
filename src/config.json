@@ -4,5 +4,5 @@
         "screenshots": ["web site","website","internet site","screen"]
     },
     "directoryToScan": "images/*",
-    "outputDirectory": "dist"
+    "screenshotDirectory": "dist/screenshots"
 }

@@ -106,3 +106,4 @@ dist
 build
 /images
 .DS_Store
+dist
