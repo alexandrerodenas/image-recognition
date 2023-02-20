@@ -1,7 +1,7 @@
 import { readInputArgument } from "./argument-reader";
 import { listFilesIn } from "./files-scanner/files-scanner";
 import { isImage } from "./images-utils/is-image";
-import { RecognitionRunner } from "./recognition/runner";
+import { RecognitionRunner } from "./recognition/runner/runner";
 
 const filesToScan = readInputArgument();
 const files = listFilesIn(filesToScan);
