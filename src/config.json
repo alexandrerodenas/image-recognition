@@ -3,10 +3,12 @@
     "extensionsForImages": ["jpeg", "jpg", "png", "gif"],
     "screenshot": {
         "directory": "dist/screenshot",
-        "keyworkds": ["web site","website","internet site","screen"]
+        "keyworkds": ["web site","website","internet site","screen"],
+        "openAfterProcessing": false
     },
     "blurriness": {
         "directory": "dist/blurry",
-        "threshold": 0.95
+        "threshold": 0.95,
+        "openAfterProcessing": false
     }
 }

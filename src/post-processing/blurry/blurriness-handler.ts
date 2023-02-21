@@ -18,5 +18,8 @@ export async function moveBlurryImagesIntoDedicatedDirectory(recognizedImages: R
             }
         )
     );
-    open(config.blurriness.directory)
+    if(config.blurriness.openAfterProcessing){
+        open(config.blurriness.directory);
+    }
+    
 }

@@ -14,5 +14,7 @@ export async function moveScreenshotsInDedicatedDirectory(recognizedImages: Reco
                 }
         } 
     );
-    open(config.blurriness.directory)
+    if(config.screenshot.openAfterProcessing){
+        open(config.screenshot.directory)
+    }
 }
