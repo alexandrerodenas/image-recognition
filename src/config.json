@@ -1,8 +1,12 @@
 {
-    "extensionsForImages": ["jpeg", "jpg", "png", "gif"],
-    "keywords": {
-        "screenshots": ["web site","website","internet site","screen"]
-    },
     "directoryToScan": "images/*",
-    "screenshotDirectory": "dist/screenshots"
+    "extensionsForImages": ["jpeg", "jpg", "png", "gif"],
+    "screenshot": {
+        "directory": "dist/screenshot",
+        "keyworkds": ["web site","website","internet site","screen"]
+    },
+    "blurriness": {
+        "directory": "dist/blurry",
+        "threshold": 0.95
+    }
 }

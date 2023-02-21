@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-export function moveToDirectory(file: string, directory: string): void {
+export function moveIntoDirectory(file: string, directory: string): void {
     if (!fs.existsSync(directory)){
         fs.mkdirSync(directory, { recursive: true });
     }

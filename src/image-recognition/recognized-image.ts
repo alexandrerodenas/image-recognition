@@ -1,5 +1,4 @@
 import { DetectedObject, SceneClassifier } from "./recognizable-objects";
-import * as config from "../config.json";
 
 export class RecognizedImage {
     constructor(
@@ -12,18 +11,16 @@ export class RecognizedImage {
     public toString(): string {
         const detectedObjectsToString = this.detectedObjects.map(detectedObject => detectedObject.toString()).join('\n');
         const sceneClassifications = this.sceneClassifiers.map(sceneClassifier => sceneClassifier.toString()).join('\n');
-        return `${detectedObjectsToString}\n${sceneClassifications}\n--------------\n`;
+        return `${this.imagePath}\n${detectedObjectsToString}\n${sceneClassifications}\n--------------\n`;
     }
 
     public getImagePath(): string {
         return this.imagePath;
     }
 
-    public isScreenshot(): boolean {
-        const allClassNames: string[] = this.sceneClassifiers
+    public getAllClassNames(): string[] {
+        return this.sceneClassifiers
             .map(sceneClassifier => sceneClassifier.classNames)
             .reduce((arr, acc) => arr.concat(acc));
-        
-        return allClassNames.some(className => config.keywords.screenshots.includes(className));
     }
 }

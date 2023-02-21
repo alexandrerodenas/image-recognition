@@ -1,27 +1,18 @@
 import { RecognizedImage } from "../../image-recognition/recognized-image";
 import * as config from "../../config.json";
-import { moveToDirectory as moveIntoDirectory } from "../../file-utils/moving/move-file";
+import { moveIntoDirectory } from "../../file-utils/moving/move-file";
 const open = require('open');
 
-export class ScreenshotsHandler {
-    private readonly screenshots;
-
-    constructor(
-        recognizedImages: RecognizedImage[]
-    ){
-        this.screenshots = recognizedImages
-            .filter(image => image.isScreenshot());
-    }
-
-    public moveIntoDedicatedDirectory(): void {
-        this.screenshots
-            .forEach(
-                image => moveIntoDirectory(
-                    image.getImagePath(),
-                    config.screenshotDirectory
-                )
-            );
-        open(config.screenshotDirectory)
-    }
-
+export async function moveScreenshotsInDedicatedDirectory(recognizedImages: RecognizedImage[]): Promise<void> {
+    await recognizedImages.forEach(
+        recognizedImage => {
+                if(recognizedImage.getAllClassNames().some(className => config.screenshot.keyworkds.includes(className))){
+                    moveIntoDirectory(
+                        recognizedImage.getImagePath(),
+                        config.blurriness.directory
+                    )
+                }
+        } 
+    );
+    open(config.blurriness.directory)
 }
