@@ -3,6 +3,7 @@ import { DetectedObject, SceneClassifier } from "./recognizable-objects";
 export class RecognizedImage {
     constructor(
         private readonly imagePath: string,
+        private readonly blurriness: number,
         private readonly detectedObjects: DetectedObject[],
         private readonly sceneClassifiers: SceneClassifier[] 
     ){
@@ -22,5 +23,9 @@ export class RecognizedImage {
         return this.sceneClassifiers
             .map(sceneClassifier => sceneClassifier.classNames)
             .reduce((arr, acc) => arr.concat(acc));
+    }
+
+    public getBlurriness(): number {
+        return this.blurriness;
     }
 }

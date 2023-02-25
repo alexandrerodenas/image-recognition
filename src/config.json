@@ -1,13 +1,13 @@
 {
-    "directoryToScan": "images/*",
+    "directoryToScan": "test/**/*",
     "extensionsForImages": ["jpeg", "jpg", "png", "gif"],
     "screenshot": {
-        "directory": "dist/screenshot",
+        "directory": "/Volumes/Photos/#TODO/dist/screenshot",
         "keyworkds": ["web site","website","internet site","screen"],
         "openAfterProcessing": false
     },
     "blurriness": {
-        "directory": "dist/blurry",
+        "directory": "/Volumes/Photos/#TODO/dist/blurry",
         "threshold": 0.95,
         "openAfterProcessing": false
     }
